@@ -1,0 +1,539 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+
+  
+$blue:#003e7d;
+$yellow:#fde757;
+$green:#7cc576;
+$grey:#333;
+
+$font:'Playfair Display', serif;
+$secfont: Arial, sans-serif;
+$maxSize:1366px;
+$minSize:320px; /*98%*/
+$width:90%;
+
+
+	
+/*MAIN STRUCTURE*/
+body {font-family:$font;font-size:1em;color:$grey;font-weight:400}
+.small {font-size:.8em;}
+.small img {width:80%;height:auto;}
+header {height:70px;width:$width;min-width:$minSize;max-width:$maxSize;margin:0 auto;position:relative;@include display-flex;display:-ms-flexbox;padding-top:20px}
+section {width:$width;max-width:$maxSize;@include display-flex;display:-ms-flexbox;margin:0 auto;flex-wrap:nowrap;position:relative;}
+footer {width:100%;margin:0 auto;color:$blue;text-align:center;line-height:125%;padding:20px 0;max-width:100%;position:fixed;bottom:0;background-color:#fff;}
+.footFixed {position:static;}
+main {height:85vh;}
+.banner {width:100%;height:50vh;max-height:60vmin;background-image:url(../images/banner.gif);@include background-size(cover);margin:0 auto;}
+
+button {background-color:$green;border:none;color:#fff;padding:15px 0;font-size:100%;font-weight:bold;width:150px;font-family:$secfont; cursor:pointer}
+button:hover {background-color:$blue;@include transition(1s all);}
+
+.anchor {
+padding-top: 170px;
+content:"";
+display:block;
+clear:both;
+} 
+
+
+a[name=numbers]:before {
+padding-top: 65px;
+content:"";
+display:block;
+}
+
+a[name=top]:before {
+padding-top:0;
+content:"";
+display:block;
+}
+
+.sidr ul li {line-height:24px !important;color:$blue !important;font-weight:700;list-style-image: url(../images/arrow.png) !important;margin:5% 0 0 12% !important}
+.sidr h1 {font-size:120% !important;text-align:center;}
+
+a#right-menu {    display: block;
+    padding-left: 15px;}
+
+@-ms-viewport{
+    width: device-width;
+}
+
+#uptop {color:#fff;font-size:200%;padding:10px 20px;background-color: rgba(1,13,79,0.57);position:fixed;bottom:0;right:10%;z-index:1000;display:none;}
+
+#subnav {@include display-flex;display:-ms-flexbox;width:1080px;position:relative;top:-50px}
+
+/* STYLES */
+
+/* TOP COVER STYLES */
+.menuFixed {position:fixed;z-index:1000;box-shadow:1px 1px 3px #000,1px 1px 3px #ccc;background-color:#fff;width:100%;max-width:100%;padding-top:20px;}
+.mobile {top:30px;}
+.menu {color:$yellow;font-weight:700;font-size:130%;text-transform:uppercase;margin-top:24px;text-align:right;}
+.menu span {width:55px;height:3px;background-color:$blue;display:block;margin:0 auto 5px}
+header > p img {display:block;margin-top:18px;}
+header h1 {@include flex(5);margin:18px 0 0 2.3%;-ms-flex:5;}
+h1 {color:$blue;font-size:200%}
+.banner h1 {font-size:400%;color:#fff;@include flex(none);display:block;line-height:80%;font-weight:700;margin-top:20%;@include text-shadow(1px 1px 8px #000);text-transform:uppercase;}
+.banner span {display:block;}
+.banner button {margin-right:10px;@include flex(1);margin-top:32px;-ms-flex:1;}
+.banner div {margin:0 0 0 138px;}
+
+a {text-decoration:none;color:$blue;}
+button > a {color:#fff;}
+.links a {display:block;text-align:right;padding:3px 0}
+.links2 a {display:block;text-align:left;padding:3px 0 0 40px}
+.links {margin-top:18px;@include flex(2);-ms-flex:2;}
+.links2 {display:none;}
+.menu {@include flex(1);-ms-flex:1;}
+.left {/*width:35.25%;*/@include flex(1);-ms-flex:1;height:174px;background-color:$yellow;position:relative;/*top:-30px;*/margin-top:25px;padding:15px 0 0 4%;line-height:130%;/*left:-35.5%;*/color:$blue;padding:25px 0 25px 55px}
+.left  p:nth-child(1) {font-size:140%;font-weight:700}
+.left button {margin:10px 0;}
+.right {/*width:36.172%;*/@include flex(1);-ms-flex:1;height:265px;background-color:$blue;position:relative;/*top:-60px;left:47.3%*/}
+.right ul {color:#fff;font-family:$secfont;padding:2%;margin:5% 0 0 12%;list-style-image: url(../images/arrow.png)}
+.right ul a {text-decoration:none;color:#fff;}
+.right li {padding:6px 0;}
+.right p {color:$yellow;text-align:center;}
+
+/* PRES LETTER STYLES */
+#pres {width:1000px;@include flex-direction(row-reverse);ms-flex-direction:row-reverse;padding-top:100px}
+#pres div {max-width:205px;margin-right:3%;}
+#pres img {margin-right:25px;display:inline-block;}
+#pres > h1 {font-size:300%;@include flex(1);-ms-flex:1;}
+
+#presltr, #utltr {display:block;width:1000px;margin-top:25px;font-family:$secfont;}
+#presltr p, #utltr p {line-height:150%;margin:12px 0;}
+#presltr ul, #utltr ul {list-style:disc;margin-left:25px}
+#presltr li, #utltr li {padding:5px 10px;line-height:150%;}
+
+.name {font-size:.95em;color:$blue;font-weight:700;padding:5px 0}
+.title {font-size:.95em;font-style:italic;line-height:130%}
+
+/* UT PRES LETTER STYLES */
+#ut {padding-top:100px;position:relative}
+#ut h1 {width:300px;position:absolute;left:52%;top: 360px;font-size: 300%;}
+#utright {background-image:url(../images/ut-bkg-right.png); background-size:cover;width:51%;height:384px;position:relative;top:-140px}
+#utleft {background-image:url(../images/ut-bkg-left.png);background-size:cover;width:48.9%;height:310px;position:relative}
+#utleft div {position:absolute;right:0;bottom:-63px;width:210px}
+#utleft div img {float:right;display:block;margin-bottom:10px}
+
+/* SUPPORT */
+#support {padding-top:150px;}
+.support p {color:#fff;text-shadow:1px 1px 3px #000;font-family:$secfont;padding:5px 0 15px}
+.support h2 {font-size:200%;color:#fff;text-shadow:1px 1px 3px #000;}
+#story1 {width:44.375%;text-align:center;padding:75px 2% 0;@include flex(1);-ms-flex:1;background-image:url(../images/story1-bkg.png);background-size:cover;height:290px;margin-top:54px;}
+#story2 {width:56.5625%;text-align:center;padding:75px 2% 0;height:343px;background-image:url(../images/story2-bkg.png);background-size:cover;}
+#story3 { width: 31.953125%;text-align:center;padding:65px 2% 25px;@include flex(1);-ms-flex:1;background-image:url(../images/story3-bkg.png);background-size:cover;height:190px;position:relative;left:50px} /* 409 / 1280 */
+#story4 { width: 64.296875%;text-align:center;padding:125px 2% 0;height:238px;background-image:url(../images/story4-bkg.png);background-size:cover;position:relative;top:-75px;left:50px} /* 823 / 1280 */
+.label {position:absolute;width:52.6%;background-color:#fff;padding:50px 0;left:350px;top:-120px;text-align:center;font-size:150%}
+
+#story1 h2 {margin:75px 0 15px}
+
+.featured {display:none;opacity:0;transition:opacity 1s;}
+.featured h1 {font-size:350%;padding-bottom:25px}
+#featured1 p, #featured2 p, #featured3 p, #featured4 p {font-family:$secfont;padding:10px 0; line-height:150%;}
+.rightimg {margin-top:50px}
+
+.cutphotos {width:100%;min-width:$minSize;max-width:$maxSize;@include display-flex;display:-ms-flexbox;margin:0 auto;flex-wrap:nowrap;position:relative;}
+
+.coach {max-width:492px;width:100%;max-height:320px;height:auto;}
+.football {max-width:492px;width:100%;max-height:320px;height:auto;}
+.award {max-width:692px;width:100%;max-height:320px;height:auto;}
+.studentserv {max-width:692px;width:100%;max-height:420px;height:auto;}
+
+.featimg1 {max-width:792px;width:100%;max-height:300px;height:auto;}
+.featimg2 {max-width:497px;width:100%;max-height:368px;height:auto;}
+
+.student {float:left;margin: 25px;}
+.lrgarrow {float:left;}
+
+.year p {padding:35px 35px 0 !important; font-size:18px !important; color:$grey}
+.year div {@include flex(1);-ms-flex:1;}
+.cutphotos p {font-size:.9em !important;padding:30px !important;line-height:2em !important}
+.next {margin:15px 0;display:block}
+
+em { font-style:italic;}
+
+
+/* FINANCIALS */
+#fin {padding-top:100px;}
+#finleft {background-color:$blue;height:161px;width:52.375%;padding-top:170px;overflow:visible } /* 632 / 1280 */
+#finleft h1 {color:#fff;font-size:250%;padding:0 35px;font-weight:400;} 
+#finleft p {color:#fff;font-size:190%;padding:0 35px;font-family:$secfont;}
+
+#finnav  {height:150px;}
+#finnav ul {font-family:$secfont;padding:2%;margin:5% 0 0 12%;list-style-image: url(../images/arrow.png);width:100%}
+#finnav ul a {text-decoration:none;color:$blue;}
+#finnav ul a:hover {text-decoration:none;color:$blue;font-weight:700}
+#finnav li {padding:6px 0;}
+
+#finright img {display:block;margin-top:30px;width:100%;height:100%}
+
+#financials {background-color:$yellow;height:278px;width:43.984375%;position:relative;top:-150px;left:50% }
+#financials table td {padding:10px 0;font-weight:600;}
+#financials table {margin:45px auto 0;font-family:$secfont;}
+.dollar {text-align:right;}
+
+#chartnav {position:relative;left:-560px;}
+#charts img {display:block;margin:0 auto;}
+#charts {display:block}
+#charts img.charts {display:none;}
+
+
+/* JQUERY UI ACCORDION */
+#accordion {max-width:70%;width:100%;margin:0 auto;padding:0 0 25px;}
+
+.ui-state-default {border:none !important;border-bottom:1px solid $blue !important;background-color:transparent !important;border-radius:0 !important;outline:none !important}
+.ui-corner-all {border-bottom-right-radius: 0 !important;border-bottom-left-radius:0 !important;}
+.ui-state-active {color:$blue !important;outline:none !important}
+.ui-state-active .ui-icon {background-image: url(../images/ui-icons_444444_256x240.png) !important;}
+.ui-accordion .ui-accordion-header {font-size:130% !important;}
+.ui-icon {background-image: url(../images/ui-icons_444444_256x240.png) !important;}
+.ui-widget-content {border:none !important;}
+
+
+/* ABOUT PANEL STYLES */
+#about {background: url(../images/about-bkg.gif);background-size:cover;color:#fff;width:100%;max-width:100%;padding:50px 0;background-position:center}
+#about div {width:$width;margin:0 auto;padding:25px;text-align:center}
+#about h1 {color:#fff;font-size:250%;margin-bottom:25px}
+#about p {padding:10px 0;line-height:140%}
+#about ul {color:#fff;font-family:$secfont;padding:15px;margin:0 0 0 12%;display:table}
+#about li {padding:6px 0;text-align:center;display:block}
+
+#about h3 {font-size:1.5em;margin:15px 0;}
+
+/* INFO PANEL STYLES */
+#info {background-color:$blue;color:#fff;width:100%;max-width:100%;padding:50px 0;}
+#info div {width:$width;margin:0 auto;border:2px solid #fff;text-align:center;padding:25px 0;}
+#info p {padding:10px 0;}
+#info a {color:#fff;}
+#info a:after {content:" |";}
+strong {font-weight:bold;}
+
+
+
+
+/* MOBILE BREAKS */
+
+
+
+@media only screen and (min-width : 320px) and (max-width : 640px) {
+
+/* Smartphones (portrait & landscape) ----------- */
+	
+	.links {display:none;}
+	.links2 {display:block;}
+	main {height:auto;}
+	header h1 {display:none}
+	header img {width:70%;height:auto;margin:0 10px}
+	.banner  {background-position: center;height:150px}
+	.banner section > div button {display:none;}
+	.banner h1 {font-size:2em;margin-top:0;width:200px;}
+	.banner div {margin: 30px 0 0 21%;}
+	 .left {left:0;width:100%;margin:0;display:block;text-align:center;padding:0;padding:10px 0;height:auto}
+	.right {display:none;}
+	#subnav .right li {font-size:.8em;background-color:$blue;list-style-position:inside;padding: 10px 0 10px 15px;margin-bottom: 2px;}
+	
+a#right-menu {
+    margin-right: 25px;
+}
+	.right ul {margin: 30px 0 0 2%;}
+	#subnav {display:block;width:100%;position:static;}
+	#arrow {display:none;}
+	section {@include flex-wrap(wrap);width:100%;margin:0}
+	section p {padding:0 10px;margin-bottom:10px}
+	footer {font-size:.75em;padding:15px 0;width:100%}
+	#pres {@include flex-direction(row);ms-flex-direction:row;width:90%;padding-top:0;}
+	#pres h1 {text-align:center;margin-bottom:20px;min-width:$width;flex-basis:auto;-webkit-flex-basis:auto}
+	#presltr {width:90%;}
+	#presltr p {padding:0 5%;}
+	#utltr {width:90%;}
+	#utltr p {padding:0 5%;}
+	#utleft div {bottom: -80px;}
+	#ut h1 {position:static;width:100%;font-size:250%;padding:100px 5% 0;}
+	#pres img {
+    margin-right: 15px;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+#pres div {
+    margin:0 auto;
+}
+#pres div:nth-child(2) {order:3;-webkit-order:3}
+
+section#support, section#support2 {width:100%;margin:0;padding-top:0;}
+header.menuFixed > section {width:90%;}
+
+#story1, #story2, #story3, #story4 {@include flex(none);width:100%;position:static;height:110px;padding:25px 0;}
+
+#story1 p, #story2 p, #story3 p, #story4 p {display:none;}
+
+#story1 h2, #story2 h2, #story3 h2, #story4 h2 {padding-bottom:10px;font-size:1.5em}
+
+#story1 h2 {
+    margin: 0 0 15px;
+}
+
+#featured4 p, #featured3 p, #featured2 p, #featured1 p{padding: 0 5% 0;}
+.featured h1 {    font-size: 250%;
+    padding:0 2% 25px;
+    text-align: center;}
+	
+	.student {width:100px;height:auto;float:none}
+	.lrgarrow {float:none;width:10%;height:auto}
+
+.label {display:none;}
+
+#finleft {
+    width: 100%;
+	padding-top:50px;
+	height:auto;
+}
+#finleft p {
+	font-size:100%;
+	padding:10px 0 10px 35px;
+}
+#finright {display:none;}
+#fin {padding-top:0;width:100%}
+section#finnav {width:100%;height:auto}
+#charts {width:100%}
+#financials {position:static;width:100%}
+#chartnav {position:static;width:88%}
+#chartnav ul {margin-left:50px;width:90%}
+#charts img {width:100%;height:100%;}
+#utright {display:none}
+#utleft {width:100%;}
+#ut {padding-top:0;width:100%}
+.name {padding: 5px 15px;}
+.title {padding:0 15px;}
+#pres .title {margin-bottom:15px}
+.cutphotos {display:block;}
+
+
+a[name=numbers]:before {
+padding-top:0;
+content:"";
+display:block;
+}
+.anchor {
+padding-top: 80px;
+content:"";
+display:block;
+} 
+.next {
+    margin: 15px auto;
+    display: block;
+}
+#about div, #info div {margin:0 auto;}
+#info a {display:block;padding:5px 0}
+#info a:after {content:"";}
+.sidr h1 {font-size:100% !important;text-align:center;}
+.sidr {width:220px !important;}
+#uptop {
+	right:0;
+	padding:5px 10px
+}
+/* ACCORDION */
+#accordion {
+    max-width: 100%; 
+    width: 100%;
+    margin: 0 auto;
+	padding:0;
+}
+.ui-accordion .ui-accordion-header {
+    font-size: inherit !important;
+}
+}
+
+@media only screen 
+
+and (min-width : 641px) 
+
+and (max-width : 1024px) {
+
+
+	.links {display:none;}
+	.links2 {display:block;}
+	main {height:auto;}
+	header h1 {margin: 0 2.3%;}
+	header img {width:70%;height:auto;margin:0 10px}
+	.banner  {background-position: center;height:150px}
+	.banner section > div button {display:none;}
+	.banner h1 {font-size:2em;margin-top:0;width:200px;}
+	.banner div {margin: 30px 0 0 21%;}
+	 .left {left:0;width:100%;margin:0;display:block;text-align:center;padding:0;padding:10px 0;height:auto}
+	.right {display:none;}
+	#subnav .right li {font-size:.8em;background-color:$blue;list-style-position:inside;padding: 10px 0 10px 15px;margin-bottom: 2px;}
+	
+a#right-menu {
+    margin-right: 25px;
+}
+	.right ul {margin: 30px 0 0 2%;}
+	#subnav {display:block;width:100%;position:static;}
+	#arrow {display:none;}
+	section {@include flex-wrap(wrap);width:98%;margin:0 auto}
+	section p {padding:0 10px;margin-bottom:10px}
+	footer {font-size:.75em;padding:15px 0;width:100%}
+	#pres {@include flex-direction(row);ms-flex-direction:row;width:90%;padding-top:0;margin: 0 auto;}
+	#pres h1 {text-align:center;margin-bottom:20px;width:$width;flex-basis:auto;-webkit-flex-basis:auto}
+	#presltr {width:100%;}
+	#presltr p {padding:0 5%;}
+	#utltr {width:90%;    padding-top: 50px;}
+	#utltr p {padding:0 5%;}
+	#utleft div {bottom: -80px;}
+	#ut h1 {position:static;width:100%;font-size:250%;padding:75px 5% 0}
+	#pres img {
+    margin-right: 15px;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+#pres div:nth-child(2) {order:3}
+
+section#support, section#support2 {width:100%;margin:0;padding-top:0;}
+header.menuFixed > section {width:90%;}
+
+#story1, #story2, #story3, #story4 {@include flex(none);width:100%;position:static;height:110px;padding:25px 0;}
+
+#story1 p, #story2 p, #story3 p, #story4 p {display:none;}
+
+#story1 h2, #story2 h2, #story3 h2, #story4 h2 {padding-bottom:10px;font-size:1.5em}
+
+#story1 h2 {
+    margin: 0 0 15px;
+}
+
+.featured img {display:block;margin:0 auto;}
+.featured {width:75%;}
+
+#featured4 p, #featured3 p, #featured2 p, #featured1 p{padding: 0 5% 0;}
+.featured h1 {    font-size: 250%;
+    padding:0 2% 25px;
+    text-align: center;}
+	
+	.student {width:100px;height:auto;float:none}
+	.lrgarrow {float:none;width:10%;height:auto}
+
+.label {display:none;}
+
+#finleft {
+    width: 100%;
+	padding-top:50px;
+	height:auto;
+}
+#finleft p {
+	font-size:100%;
+	padding:10px 0 10px 35px;
+}
+#finright {display:none;}
+#fin {padding-top:0;width:100%}
+section#finnav {width:100%;height:auto}
+#charts {width:100%}
+#financials {position:static;width:100%}
+#chartnav {position:static;width:88%}
+#chartnav ul {margin-left:50px;width:90%}
+#charts img {width:100%;height:100%;}
+#utright {display:none}
+#utleft {width:100%;}
+#ut {padding-top:0;width:100%}
+.name {padding: 5px 15px;}
+.title {padding:0 15px;}
+#pres .title {margin-bottom:15px}
+.cutphotos {display:block;}
+
+
+a[name=numbers]:before {
+padding-top:0;
+content:"";
+display:block;
+}
+.anchor {
+padding-top: 80px;
+content:"";
+display:block;
+} 
+.next {
+    margin: 15px auto;
+    display: block;
+}
+#about div, #info div {margin:0 auto;}
+#info a {display:block;padding:5px 0}
+#info a:after {content:"";}
+.sidr h1 {font-size:100% !important;text-align:center;}
+.sidr {width:220px !important;}
+#uptop {
+	right:0;
+	padding:5px 10px
+}
+/* ACCORDION */
+#accordion {
+    max-width: 100%; 
+    width: 100%;
+    margin: 0 auto;
+	padding:0;
+}
+.ui-accordion .ui-accordion-header {
+    font-size: inherit !important;
+}
+
+
+}
+
+
+@media only screen
+
+and (min-width: 1025px) 
+
+and (max-width : 1200px) {
+
+/* Desktops and laptops ----------- */
+
+header h1 {margin: 0 2.3%;}
+#subnav {width:90%;}
+section, #pres, #presltr, #utltr {width:90%;}
+#support {width:100%;}
+.label {left: 250px;top: -160px;}
+.cutphotos p {padding: 30px 30px 0 !important;line-height: 1.5em !important;}
+#finleft p {font-size: 160%;padding: 10px 35px;}
+#financials {left:40%;}
+#accordion { max-width: 100%;}
+
+
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) {
+	 /* Iphone 6 */
+	 
+	 
+	 #pres h1 {
+
+    width: 100%;
+    display:block;
+}
+	 
+	 
+	 }
+
+
+
+
+@media (min-resolution: 120dpi), (-min-device-pixel-ratio: 1.25) {
+	
+	body {font-size:.9em}
+	
+}
+	
+@media screen 
+	and (min-width:1025px) 
+	and (max-width:1185px) {
+		.cutphotos {@include flex-wrap(nowrap);}
+	}
